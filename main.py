@@ -8,13 +8,14 @@ def remove_bg():
     all_files = []
 
     for ext in list_of_extensions:
-        all_files.extend(Path("C:/Users/vovae/Documents/Remove-background-script/input_images").glob(ext))
+        all_files.extend(Path('input_images').glob(ext))
 
+    
     for index, item in enumerate(all_files):
         input_path = Path(item)
         file_name = input_path.stem
 
-        output_path = f'C:/Users/vovae/Documents/Remove-background-script/output_images/{file_name}_output png or jpg'
+        output_path = f'output_images/{file_name}_output.png'
         
         input_img = Image.open(input_path)
         output_img = remove(input_img)
